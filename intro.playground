@@ -1,0 +1,377 @@
+import UIKit
+
+var str = "Hello, playground"
+
+//
+/**
+**/
+
+var strExplicita:String = "String com tipo explícito"
+var strInferida = "String com tipo inferido"
+var x=1, y=2, z=3
+var a,b,c:Double
+
+print(a)
+
+//CONSTANTES
+let strConstante = "Santos"
+
+//Opcionals
+var strTextoOpcional:String? = nil;
+var intIdadeOpcional:Int?
+intIdadeOpcional = nil
+
+var novaIdade = 2 + intIdadeOpcional! //o ! serve para unwrap, permitindo obter o valor de um Optional puro (ao invés de Optional etc.)
+
+let valorRecuperado = intIdadeOpcional //fazendo isso pegamos o valor nao nil
+if let valorRecuperado = intIdadeOpcional {
+    print("O valor é: \(valorRecuperado)")
+}else{
+    print("Erro a variável está nula, ou seja, não contém valor")
+}
+
+if intIdadeOpcional != nil{
+    print("Optional contem algum valor")
+}
+
+var intAberturaImplicitaNumero:Int!=214
+var intNovoValor:Int
+//Quando o mesmo for utilizado, não é necessário "abri-lo"
+intNovoValor = 2 + intAberturaImplicitaNumero
+//Se nao tivesse valor daria erro
+
+//TIPOS DE DADOS
+Int
+UInt
+Float
+Double
+Bool
+Character
+String
+//Até o Swift 2 tinha o AnyObject
+//No Swift 3 usamos o Any
+
+//Para descobrir os valores m[aximos]
+UInt8.min
+UInt8.max //Inteiro de 8 bits, tem 16 também
+Int.min
+Int.max
+UInt.min
+UInt.max
+
+//INTERPOLACAO
+print("A idade da pessoa é : \(novaIdade) anos")
+let numeroA = 3;
+let mensagem = "\(numeroA) multiplicado por 2 é \(numeroA * 2)"
+
+//STRINGS
+var strNome = ""
+var strSobrenome = String()
+//para testar se uma string está vazia, é utilizado isEmpty
+if strNome.isEmpty  {
+    print("A variável nome está vazia")
+}
+var text = "This is some text\n"
+         + "over multiple lines\n"
+var text2 = """
+    This is some text
+    over multiple lines
+    """
+
+let nome = "Agesandro"
+let sobrenome = "Scarpioni"
+var nomeCompleto = nome + sobrenome
+var nomes = "Maria"
+nomes += " e Ana"
+nomes += " - Sexo:"
+
+let genero:Character = "F"
+//Depois concatenados com Strings, através do método "append"
+nomes.append(genero)
+
+var texto3 = "Maria foi trabalhar"
+var texto4 = "Maria foi trabalhar"
+if texto3 == texto4{
+    print("as string são iguais")
+}
+
+var texto5 = "Bom dia Brasil"
+if texto5.hasPrefix("Bom"){
+    print("Esta frase inicia o texto com Bom")
+}
+if texto5.hasSuffix("sil"){
+    print("Esta frase termina com o texto sil")
+}
+
+let totalCaracteres = texto.count
+let totalCaracteres2 = texto.endIndex
+let totalCaracteres3 = (texto as NSString).length //fazendo casting leia 3 tópicos abaixo sobre conversões e casting
+print("total é = \(totalCaracteres)")
+
+//CASTING 
+var n1=7
+var n2 = Double(n1) + 0.343
+var n3 = Int(10.75)
+var minhaString = "\(n3)"
+var minhaString2 = String(n2)
+let umNumero = "800"
+let valorConvertido = Int(umNumero)
+let outroTexto: NSString = String("abc") as NSString
+let nota = "7.5"
+let paraFloat = Float(nota)
+let paraDouble = Double(nota)
+
+//OPERADORES
+//Igual às demais linguagens
+
+//IF
+var sx = "F"
+if sx == "F" {
+    print("Bom dia Sra.")
+}else if sx == "M"{
+    print("Bom dia Sr.")
+}else {
+    print("Digite apenas F ou M para o campo sexo")
+}
+
+//TERNÁRIO 
+var cidade:String = "São Paulo"
+var status = cidade=="São Paulo" ? "Paulistano" : "Não é paulistano"
+
+//SWITCH
+sx="K"
+switch sx{
+case "F":
+    print("Bom dia Sra.")
+case "M":
+    print("Bom dia Sr.")
+default:
+    print("Digitação incorreta use apenas F ou M ")
+}
+
+var temperatura:Float=37.2
+switch temperatura{
+case 34...37:
+    print("Sem febre")
+case (37.1)...(37.7):
+    print("Febril")
+case (37.8)...(41):
+    print("Com febre")
+default:
+    print("Faça uma nova medição da temperatura")
+}
+
+//ARRAY
+var listaCarros: [String] = ["GM", "FIAT", "VW"]
+var listaCarrosTipoInferido = ["GM", "FIAT", "VW"]
+//Vazio agora só tipado
+var arrayTipadoVazioString:[String] = []
+//ou
+var emptyArray = [String]()
+var arrayTipadoVazio: [Int] = []
+
+arrayTipadoVazio.append(100) //Adicionado um item ao array
+arrayTipadoVazio = [] // O array foi esvaziado e continua Int
+
+if listaCarros.isEmpty {
+    print("A lista esta vazia.")
+} else {
+    print("A lista não esta vazia.")
+}
+
+var primeiroItem = listaCarros[0]
+print("\(listaCarros.count) é a quantidade de itens na lista.")
+
+listaCarros.append("Honda")
+listaCarros.append("Toyota")
+listaCarros += ["Hyundai"]
+listaCarros += ["Ferrari", "Renault", "Land Rover"]
+
+listaCarros[4...7] = ["Audi", "BMW"]
+listaCarros.append("Mercedes")
+listaCarros[1] = "Subaru"
+listaCarros.insert("Ferrari", at: 0)
+listaCarros.remove(at: 0)
+listaCarros.removeSubrange(2...4)
+listaCarros.removeLast()
+
+for item in listaCarros {
+    print(item)
+}
+
+//DICIONÁRIOS
+var meuDicionario: [String: String] = ["nome": "José Silva","cidade": "São Paulo", "estado": "SP"]
+var meuDicionario2 = ["nome": "Carla Maria","cidade": "Florianópolis", "estado": "SC"]
+
+var meuDicionarioVazioTipado = [Int: String]()
+
+meuDicionarioVazioTipado[16] = "sixteen" 
+meuDicionarioVazioTipado = [:]
+
+if meuDicionario.isEmpty {
+    print("Dicionário esta vazio.")
+} else {
+    print("Dicionário não esta vazio.")
+}
+
+if let nomearmazenado = meuDicionario["nome"] {
+    print("O nome é  \(nomearmazenado).")
+} else {
+    print("Esta chave não está no dicionário")
+}
+
+print("O dicionario contém \(meuDicionario.count) items.")
+
+meuDicionario["nome"] = "Agesandro"
+meuDicionario.updateValue("Sorocaba", forKey: "cidade")
+
+for (chave, valor) in meuDicionario {
+    print("\(chave): \(valor)")
+}
+for chave in meuDicionario.keys {
+    print("Nome da chave: \(chave)")
+}
+for valor  in meuDicionario.values {
+    print("Valor armazenado : \(valor)")
+}
+
+meuDicionario["cidade"] = nil //Remove a chave inteira
+
+//LOOPS
+for x in 0 ..< 3 {
+    print("Executando o passo : \(x)")
+}
+for x in 1...5 {
+    print("\(x) multiplicado por 2 é \(x * 2)")
+}
+let cidades = ["Santos", "Sorocaba", "Campinas", "Jundiaí", "Ourinhos"]
+for cidade in cidades{
+    print("A cidade armazenada no array é \(cidade)")
+}
+let meudici = ["BA": "BAHIA", "SP": "SÃO PAULO", "RJ": "RIO DE JANEIRO", "SC":"SANTA CATARINA"]
+for (sig, est) in meudici {
+    print("A sigla \(sig) é do estado \(est) !")
+}
+for index in (0...3).reversed() {
+    print("\(index)..")
+}
+
+var n = 2
+while n < 5 {
+    n *= 2
+}
+
+var m = 2
+repeat {
+    m *= 2
+} while m < 5
+
+//ENUMS
+enum diaSemana {
+    case segunda
+    case terça
+    case quarta
+    case quinta
+    case sexta
+    case sabado
+    case domingo   
+}
+enum diaSem: String {
+    case seg = "segunda-feira"
+    case ter = "terça-feira"
+    case qua = "quarta-feira"
+    case qui = "quinta-feira"
+    case sex = "sexta-feira"
+    case sab = "sabado"
+    case dom = "domingo"
+}
+
+switch dia{
+case .segunda:
+    print("Dia de trabalho duro, primeiro dia da semana ")
+case .terça:
+    print("Dia de trabalho, a semana já começou")
+case .quarta:
+    print("Já estamos no meio da semana")
+case .quinta:
+    print("Falta pouco para o fim de semana")
+case .sexta:
+    print("Sextou")
+case .sabado:
+    print("Chegou o primeiro dia do fim de semana")
+case .domingo:
+    print("Domingão dia de almoço com a família")
+}
+
+//SUBROTINAS e FUNCOES
+func darBomdDia(){ //Subrotina, porque nao tem retorno
+    print ("Bom dia")
+}
+func retornarUmCalculo()->Int{ //Tem retorno
+    return 5+4
+}
+var numero:Int = retornarUmCalculo()
+func verificarMaiorMenor(valor:Int) -> String{
+    if valor < 18 {
+        return "Menor"
+    }else{
+        return "Maior"
+    }
+}
+verificarMaiorMenor(valor: 17) //Se tiver mais de um precisa seguir a ordem dos params
+
+//funções com mais de um retorno
+func calcularIMC_3(peso:Float,altura:Float) -> (valorImc:Float, situacao:String){
+    let vimc = peso / (altura * altura)
+    var sit:String
+    if vimc < 25 {
+        sit = " Normal"
+    }else{
+        sit = " Sobrepeso"
+    }
+    return (vimc, sit)
+}
+let resultadoImc = calcularIMC_3(peso: 85, altura: 1.87)
+print("O IMC: \(resultadoImc.valorImc) tem situação: \(resultadoImc.situacao)" )
+
+func idadePessoa(nome n:String, idade i:Int) -> String {
+    return "\(n) tem \(i) anos"
+}
+let testando = idadePessoa(nome: "Ana", idade: 23)
+
+//Map, Filter, Reduce, Flatmap
+//MAP
+var alunosNotas5 = [4, 5, 7, 9, 6, 10, 3]
+alunosNotas5 = alunosNotas5.map {$0 + 1} //$0 seria o item atual, $1 seria o próximo da iteracao
+
+[1, 2, 3, 4, 5].map( { (nota: Int) -> Int in return nota + 1 } )
+[1, 2, 3, 4, 5].map( { nota in return nota + 1 } )
+[1, 2, 3, 4, 5].map( { nota in nota + 1 } )
+[1, 2, 3, 4, 5].map( { $0 + 1 } )
+[1, 2, 3, 4, 5].map{ $0 + 1 }
+
+//FILTER 
+alunosNotas = alunosNotas6.filter { $0 >= 6 }
+
+//REDUCE
+soma = alunosNotas6.reduce (0, {$0 + $1})
+soma = alunosNotas6.reduce (0, +)
+
+//FLATMAP
+let arrayNoArray = [[11,12,13],[14,15,16]]
+let arrayUnico = arrayNoArray.flatMap{$0}
+
+//CAMPACT MAP
+//Utilizando compactMap para remover itens nulos de uma coleção
+let pessoas: [String?] = ["Marcia", nil, "Carlos", nil, "Fabiana", "Fabio", "Ana", nil]
+let pessoasValidas = pessoas.compactMap{$0}
+
+//ENCADEAMENTO
+let arrayDosQuadradosNumerosPares = arrayNoArray.flatMap{$0}.filter{$0 % 2 == 0}.map{$0 * $0}
+var arrayComCifrao = arrayNoArray.flatMap{$0}.map{"$\($0)"}
+
+
+
+
+
+
