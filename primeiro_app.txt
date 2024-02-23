@@ -1,0 +1,15 @@
+IOS App usando StoryBoard
+
+    Action
+        Componentes que disparam acao sao actions
+        Sao Ativos
+
+    Outlet
+        Sao Passivos
+        Componentes que nao disparam acoes, geralmente associadas ao resultado de alguma action
+    
+    Arrastar um componentes do StoryBoard para um codigo de Controller
+        Se for acima vira Outlet
+        Abaixo Action (exceto componentes que nao tem action possivel)
+        
+    Lembrar de tomar cuidado com as conexões entre os componentes e o código
