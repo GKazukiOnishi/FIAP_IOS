@@ -1,6 +1,6 @@
-### Aula Sobre Action e Outlet
+# Aula Sobre Action e Outlet
 ## Sub
-# Title
+### Title
 
 **Negrito**
 *Itálico*
@@ -13,3 +13,18 @@ console.log("AaAAAA")
 
 ```
 
+1. Item 1
+2. Item 2
+3. Item 3
+
+- Item 
+- Item
+- Item
+
+`print()`
+
+---
+
+[Git](www.github.com)
+
+![alt text](image.jpg)
