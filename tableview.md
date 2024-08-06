@@ -20,3 +20,6 @@ Implementar os protocolos desejados na Controller e os métodos
 2. numb -> numberOfSections -> Número de seções
 3. numb -> tableView(table, numberOfRowsInSection) -> Determina as linhas na seção
 4. cell -> tableView(table, cellForRowAt) -> Contrói células
+
+### Lembrar de associar a Controller com a View
+Associar a TableView como outlet na Controller e lembrar de preencher o reuseIdentifier na TableView
