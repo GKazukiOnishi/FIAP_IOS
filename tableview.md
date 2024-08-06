@@ -13,7 +13,7 @@ Um protocolo contendo assinaturas que os componentes usam para popular a tabela
 ### Delegate
 Outro protocolo, mas que serve para iteração e aparência das células
 
-## Implementação
+## Implementação do DataSource
 Implementar os protocolos desejados na Controller e os métodos
 
 1. DataSource -> UITableViewDataSource
@@ -23,3 +23,11 @@ Implementar os protocolos desejados na Controller e os métodos
 
 ### Lembrar de associar a Controller com a View
 Associar a TableView como outlet na Controller e lembrar de preencher o reuseIdentifier na TableView
+
+### Implementação do Delegate
+1. Delegate -> UITableViewDelegate
+2. didse -> didSelectRowAt -> Para a seleção de linhas da tabela
+
+## Cell
+Cada célula possui um layout configurável que possibilita a adição de subtitulos, por exemplo
+
