@@ -27,6 +27,9 @@ Associar a TableView como outlet na Controller e lembrar de preencher o reuseIde
 ### Implementação do Delegate
 1. Delegate -> UITableViewDelegate
 2. didse -> didSelectRowAt -> Para a seleção de linhas da tabela
+3. accessory -> accessoryButtonTappedForRowWith -> Para o clique no acessório
+4. heightFor -> heightForFooterInSection e heightForHeaderInSection -> Define o tamanho do footer e do header
+5. viewFor -> viewForFooterInSection e viewForHeaderInSection -> Define o que vai aparecer em cada parte
 
 ## Cell
 Cada célula possui um layout configurável que possibilita a adição de subtitulos, por exemplo
