@@ -34,3 +34,8 @@ Associar a TableView como outlet na Controller e lembrar de preencher o reuseIde
 ## Cell
 Cada célula possui um layout configurável que possibilita a adição de subtitulos, por exemplo
 
+## TableViewController
+A diferença é que a tela inteira é a tabela. E ela já vem associada, só criar a classe TableViewController que ela já vem quase toda configurada, basta associar os controllers com a tela.  
+  
+Às vezes é mais fácil criar a classe da TableViewController e usar os métodos dela mesmo no caso da TableView.  
+Obs: Uma outra dica legal é centralizar o código do Alert em uma classe para reutilizar.  
